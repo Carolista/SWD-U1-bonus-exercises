@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><!-- Added dynamically with JS --></title>
+        <link href="styles.css" type="text/css" rel="stylesheet" />
+        <script src="script.js" type="module" defer></script>  
+    </head>
+    <body>
+        <header>
+            <form>
+                <label for="speech-select">Please select a speech to display:</label>
+                <select id="speech-select" name="speech-select">
+                    <!-- Options added with JS -->
+                </select>
+            </form>
+        </header>
+        <main>
+            <section>
+                <h1 id="title"></h1>
+                <h2 id="speaker"></h2>
+                <h3 id="date"></h3>
+            </section>
+            <section id="speech-box">
+                <span id="speech-text"></span>
+            </section>
+        </main>
+    </body>
+</html>

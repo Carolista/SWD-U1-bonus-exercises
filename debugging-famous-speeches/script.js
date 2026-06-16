@@ -1,8 +1,5 @@
 import { allData } from "./data/speeches.js";
-import { getRandomNumber } from "./utils/utilityFuncs.js";
-
-// NOTE: This file doesn't listen for window.onload
-// I used the defer attribute on <script> in the <head> instead
+import { getRandomNumber } from "./utils/mathHelpers.js";
 
 // OBJECTS REPRESENTING HTML ELEMENTS ON PAGE
 const pageTitle = document.querySelector("title");
