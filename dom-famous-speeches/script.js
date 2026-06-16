@@ -16,7 +16,7 @@ const speechText = document.getElementById('speech-text');
 /** INITIAL RENDERING OF PAGE **/
 
 // Add options to select
-Object.values(allData).forEach(speech => {
+allData.forEach(speech => {
 	const option = document.createElement('option');
 	option.id = speech.id;
 	option.value = speech.id;
@@ -25,17 +25,17 @@ Object.values(allData).forEach(speech => {
 });
 
 // Default to first speech in object
-let currentSpeechData = allData['1'];
+let currentSpeechData = allData[0];
 
-// Render page title, background, and speech title, speaker, date, and speech text
+// Render page using current speech data
 renderPage(currentSpeechData);
 
 /** EVENT LISTENERS **/
 
 // Re-render page when user selects a different speech
-speechSelect.addEventListener('change', event => {
-	console.log('Selected speech id:', event.target.value); // Initial test
-	currentSpeechData = allData[speechSelect.value];
+speechSelect.addEventListener('change', () => {
+	console.log('Selected speech id:', speechSelect.value); // Initial test
+	currentSpeechData = allData.find(speech => speech.id === speechSelect.value);
 	renderPage(currentSpeechData); // Re-render page with updated speech data
 });
 
