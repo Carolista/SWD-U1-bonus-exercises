@@ -1,67 +1,70 @@
-window.addEventListener("load", () => {
+/* CREATE OBJECTS REPRESENTING HTML ELEMENTS */
 
-    /* CREATE OBJECTS */
-  
-    // Generally a good idea to declare objects outside of listeners so they are in scope for everything
-    // There are exceptions - like if the element isn't on the page yet because it gets added later
-    
-    const date = document.getElementById("date");
-    const numButton = document.getElementById("num-button");
-    const numBox = document.getElementById("num-box");
-    const randomNum = document.getElementById("random-num");
-  
+// It's generally a good idea to declare objects outside of listeners
+// so they are in scope for everything, but there are exceptions,
+// like if an element gets added into the DOM later
 
-    /* CODE TO RUN IMMEDIATELY */
-  
-    // Run any code needed to display things on page when it first loads
-  
-    date.innerHTML += ` ${new Date().toLocaleDateString()}`;
-  
-  
-    /* EVENT LISTENERS */
-  
-    numButton.addEventListener("click", function() {
-        console.log("I clicked the button!");
-  
-        numBox.style.visibility = "visible";
-        let num = Math.ceil(Math.random() * 50);
-        randomNum.innerHTML = num;
-  
-        if (num % 2 === 0) {
-          randomNum.style.color = "yellowgreen";
-          document.body.style.backgroundColor = "yellowgreen";
-        } else {
-          randomNum.style.color = "coral";
-          document.body.style.backgroundColor = "coral";
-        }
-      
-        if (num % 3 === 0) {
-          numButton.classList.add("spinning");
-        } else {
-          numButton.classList.remove("spinning");
-        }
-      
-        if (num % 5 === 0) {
-          // Handle race condition with setTimeout()
-          setTimeout(function() {
-            alert(`The number ${num} is a multiple of 5!`);
-          }, 50)
-        }
-  
-    });
-  
-    // Note the difference between .log() and .dir() here - 
-    // One gives you a literal representation of the elements
-    // The other gives you a searchable tree to see all of the
-    // hidden attributes for the element and its children
-    
-    console.log(numButton);
-    console.dir(numButton);
-  
-    console.log(numBox);
-    console.dir(numBox);
-  
-    console.log(randomNum);
-    console.dir(randomNum);
-    
+const dateOutput = document.getElementById('date-output');
+const numButton = document.getElementById('num-button');
+const numBox = document.getElementById('num-box');
+const numOutput = document.getElementById('num-output');
+
+/* CODE TO RUN IMMEDIATELY */
+
+// Add date to existing text content
+dateOutput.textContent += ` ${new Date().toLocaleDateString()}`;
+
+/* EVENT LISTENERS */
+
+numButton.addEventListener('click', () => {
+	console.log('I clicked the button!'); // A good initial test
+
+	let num = Math.ceil(Math.random() * 50);
+	numOutput.textContent = num;
+	numBox.style.visibility = 'visible';
+
+	if (isEven(num)) {
+		numOutput.style.color = 'yellowgreen';
+		document.body.style.backgroundColor = 'yellowgreen';
+	} else {
+		numOutput.style.color = 'coral';
+		document.body.style.backgroundColor = 'coral';
+	}
+
+	if (isMultipleOfThree(num)) {
+		numButton.classList.add('spinning');
+	} else {
+		numButton.classList.remove('spinning');
+	}
+
+	if (isMultipleOfFive(num)) {
+		// Handle race condition with setTimeout()
+		setTimeout(() => {
+			alert(`The number ${num} is a multiple of 5!`);
+		}, 50);
+	}
 });
+
+/** HELPER FUNCTIONS **/
+
+function isEven(num) {
+	return num % 2 === 0;
+}
+
+function isMultipleOfThree(num) {
+	return num % 3 === 0;
+}
+
+function isMultipleOfFive(num) {
+	return num % 5 === 0;
+}
+
+/** INSPECTING OBJECTS IN BROWSER CONSOLE **/
+
+// Note the difference between .log() and .dir() here -
+// One gives you a literal representation of the elements
+// The other gives you a searchable tree to see all of the
+// hidden attributes for the element and its children
+
+console.log(numBox);
+console.dir(numBox);
