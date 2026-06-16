@@ -137,6 +137,6 @@ export const truthData = {
     imagePath: "./images/truth.jpg",
 };
 
-// This better approximates data that would be pulled from a database through an API
-// Each key corresponds to the id in the object
+// This better approximates the structure of data that would be pulled from a database 
+// through an API. Each key corresponds to the id in the object.
 export const allData = { 1: mlkData, 2: lincolnData, 3: truthData};
