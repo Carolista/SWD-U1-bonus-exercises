@@ -84,15 +84,14 @@ Let freedom ring from every hill and molehill of Mississippi and every mountains
 
 When we let freedom ring, when we let it ring from every tenement and every hamlet, from every state and every city, we will be able to speed up that day when all of God's children, black men and white men, Jews and Gentiles, Protestants and Catholics, will be able to join hands and sing in the words of the old spiritual, “Free at last, free at last. Thank God Almighty, we are free at last."`;
 
-export const mlkData = {
-    id: 1,
-    title: "I Have a Dream",
-    speaker: "Dr. Martin Luther King, Jr.",
-    date: "August 28, 1963",
-    text: mlkSpeech,
-    imagePath: "./images/king.webp",
+const mlkData = {
+	id: 123,
+	title: 'I Have a Dream',
+	speaker: 'Dr. Martin Luther King, Jr.',
+	date: 'August 28, 1963',
+	text: mlkSpeech,
+	imagePath: './images/king.webp',
 };
-
 
 // Abraham Lincoln - Gettysburg Address
 
@@ -104,15 +103,14 @@ But, in a larger sense, we cannot dedicate, we cannot consecrate—we cannot hal
 
 It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us—that from these honored dead we take increased devotion to that cause for which they here gave the last full measure of devotion—that we here highly resolve that these dead shall not have died in vain—that this nation, under God, shall have a new birth of freedom, and that government of the people, by the people, for the people, shall not perish from the earth.`;
 
-export const lincolnData = {
-    id: 2,
-    title: "The Gettysburg Address",
-    speaker: "President Abraham Lincoln",
-    date: "November 19, 1863",
-    text: lincolnSpeech,
-    imagePath: "./images/lincoln.jpg",
+const lincolnData = {
+	id: 456,
+	title: 'The Gettysburg Address',
+	speaker: 'President Abraham Lincoln',
+	date: 'November 19, 1863',
+	text: lincolnSpeech,
+	imagePath: './images/lincoln.jpg',
 };
-
 
 // Sojourner Truth - Ain't I a Woman?
 
@@ -128,15 +126,14 @@ If the first woman God ever made was strong enough to turn the world upside down
 
 Obliged to you for hearing me, and now old Sojourner ain't got nothing more to say.`;
 
-export const truthData = {
-    id: 3,
-    title: "Ain't I a Woman?",
-    speaker: "Sojourner Truth",
-    date: "1851",
-    text: truthSpeech,
-    imagePath: "./images/truth.jpg",
+const truthData = {
+	id: 789,
+	title: "Ain't I a Woman?",
+	speaker: 'Sojourner Truth',
+	date: '1851',
+	text: truthSpeech,
+	imagePath: './images/truth.jpg',
 };
 
-// This better approximates the structure of data that would be pulled from a database 
-// through an API. Each key corresponds to the id in the object.
-export const allData = { 1: mlkData, 2: lincolnData, 3: truthData};
+// This approximates the way data would come in from an external API
+export const allData = [mlkData, lincolnData, truthData];
