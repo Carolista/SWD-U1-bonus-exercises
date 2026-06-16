@@ -1,43 +1,42 @@
-window.addEventListener("load", () => {
+/** CREATE OBJECTS REPRESENTING HTML ELEMENTS **/
 
-    /* CREATE OBJECTS */
-  
-    // It's generally a good idea to declare objects outside of listeners so they are in scope for everything
-    // There are exceptions - like if the element isn't on the page yet because it gets added later
-    
-    // Instantiate the object needed for TODO #1 
-  
-    // Instantiate the objects needed for TODOs #2, #3, and #4
-  
-  
-  
-    /* CODE TO RUN IMMEDIATELY */
-  
-    // Run any code needed to display things on page when it first loads
-  
-    // TODO #1 - Add to existing text "Today's date is" using a new Date object and the .toLocaleDateString() method
-  
-  
-  
-    /* EVENT LISTENERS */
-  
-    // TODO #2 - Add a click event listener for the button 
+// DEMO #1A: Create an object representing the date output
 
-    // First test that it's working with a console.log (check browser DevTools Console) 
-    // Set it to generate a random number (use Math object)
+// DEMO #2A: Create objects for the number button, number box, and number output
 
-    // Will also need to make the div holding the number visible
-  
-    // TODO #3 - Change the color of the number (currently defaulting to 0) to yellowgreen if even or coral if odd
-    // BONUS: Also change the page background to match (use document.body)
-  
-    // TODO #4 - If the random number is evenly divisible by 3, add the spinning class to the button; otherwise remove it
-  
-    // TODO #5 - Trigger an alert (Google this!) if the number is evenly divisible by 5
-    // NOTE: Use setTimeout() (again, be resourceful!) to deal with the race condition where the alert pops up before the new number re-renders on the page; 50ms should be plenty of time to delay
-  
-  
-    // As part of TODO #2: Take a look at the content of the different objects you created at the top using console.log and console.dir
-    
-  
-});
+/** CODE TO RUN IMMEDIATELY **/
+
+// DEMO #1B: Add to existing text "Today's date is" using a new Date object and
+// the .toLocaleDateString() method
+
+/** EVENT LISTENERS **/
+
+// DEMO #2B: Add a click event listener on the number button
+
+// DEMO #2C: Test that it's working with a console.log (check browser DevTools Console)
+
+// DEMO #2D: Generate a random number (use Math object) when the button is clicked.
+// Make sure the entire box displaying the random number is made visible the first time
+// the button is clicked
+
+// DEMO #3B - Change the color of both the number output and the page background to
+// yellowgreen if even or coral if odd
+
+// DEMO #4B - If the random number is evenly divisible by 3, add the spinning class
+// to the button; otherwise remove it
+
+// DEMO #5B - Trigger a browser alert if the number is evenly divisible by 5
+
+// DEMO #5C: Use setTimeout() to deal with the race condition where the alert pops up before the new number re-renders on the page; 50ms should be plenty of time to delay
+
+/** HELPER FUNCTIONS */
+
+// DEMO #3A Write a helper function that checks if a number is even
+
+// DEMO #4A Write a helper function that checks if a number is evenly divisible by 3
+
+// DEMO #5A Write a helper function that checks if a number is evenly divisible by 5
+
+/** INSPECTING OBJECTS IN BROWSER CONSOLE **/
+
+// DEMO #6: Take a look at the content of the numBox object using console.log and console.dir

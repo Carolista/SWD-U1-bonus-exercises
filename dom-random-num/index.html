@@ -1,27 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <title>Random Number Generator</title>
-        <link href="styles.css" type="text/css" rel="stylesheet" />
-        <script src="script.js"></script>
-    </head>
-    <body>
-        <div id="page-container">
-            <header>
-                <h1>Random Number Generator</h1>
-            </header>
+	<head>
+		<title>Random Number Generator</title>
+		<link href="styles.css" type="text/css" rel="stylesheet" />
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<div id="page-container">
+			<header>
+				<h1>Random Number Generator</h1>
+			</header>
 
-            <main>
-                <div id="date-box" class="outlined-box">
-                    <p id="date">Today's date is</p>
-                </div>
+			<main>
+				<section id="date-section" class="outlined-box">
+					<p id="date-output">Today's date is</p>
+				</section>
 
-                <h3>Want a random number?</h3>
-                <button id="num-button">Click me!</button>
-                <div id="num-box" class="outlined-box">
-                    <span id="random-num">0</span>
-                </div>
-            </main>
-        </div>
-    </body>
+				<section id="random-num-section">
+					<h2>Want a random number?</h2>
+					<button id="num-button">Click me!</button>
+					<div id="num-box" class="outlined-box">
+						<span id="num-output">0</span>
+					</div>
+				</section>
+			</main>
+		</div>
+	</body>
 </html>
