@@ -1,5 +1,5 @@
-import { allData } from "./data/speeches.js";
-import { getRandomNumber } from "./utils/utilityFuncs.js";
+import { allData } from "../dom-famous-speeches/data/speeches.js";
+import { getRandomNumber } from "../dom-famous-speeches/utils/utilityFuncs.js";
 
 // NOTE: This file doesn't listen for window.onload
 // I used the defer attribute on <script> in the <head> instead

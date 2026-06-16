@@ -1,0 +1,127 @@
+body {
+	background: black;
+	background-size: 120vw;
+	color: '#333';
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: lighter;
+	font-size: 2rem;
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+	padding: 10vw 30vw 10vw 10vw;
+	box-sizing: border-box;
+}
+
+header, main {
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 50px;
+    margin-bottom: 50px;
+}
+
+h1 {
+	font-size: 6vh;
+	background-color: #000;
+	color: ghostwhite;
+	padding: 0.2em;
+}
+
+h2 {
+	color: #666;
+	font-size: 3.5vh;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+h3 {
+	color: #333;
+	font-size: 28px;
+}
+
+h1,
+h2,
+h3 {
+	margin: 5px;
+}
+
+select {
+    background-color: black;
+    color: ghostwhite;
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace;
+    width: 100%;
+    padding: 4px;
+    outline: none;
+}
+
+#speech-box {
+    font-size: 28px;
+    line-height: 140%;
+	width: 100%;
+	margin-top: 2vw;
+}
+
+.new-char {
+	opacity: 0;
+}
+
+.animate {
+	animation: fade-in 0.2s forwards;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	body {
+		padding: 5vw;
+	}
+	h1 {
+		font-size: 8vw;
+	}
+	h2 {
+		font-size: 6vw;
+	}
+	h3, #speech-box {
+        font-size: 20px;
+    }
+    select {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+	h1 {
+		font-size: 7vw;
+	}
+	h2 {
+		font-size: 5vw;
+	}
+	h3, #speech-box {
+        font-size: 24px;
+    }
+    select {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	h1 {
+		font-size: 6vw;
+	}
+	h2 {
+		font-size: 3.5vw;
+	}
+	h3, #speech-box {
+        font-size: 26px;
+    }
+    select {
+        font-size: 18px;
+    } 
+}
+
