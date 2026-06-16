@@ -1,50 +1,30 @@
-// TODO: Import object of objects from speeches.js instead of single speech
-import { mlkData } from './data/speeches.js';
+/** IMPORTS **/
 
-// DECLARE OBJECTS REPRESENTING HTML ELEMENTS ON PAGE
-const pageTitle = document.querySelector('title');
-const main = document.querySelector('main');
+// DEMO #5A: Import speech data
 
-// TODO: Add object to represent select element
+/** OBJECTS REPRESENTING HTML ELEMENTS ON PAGE **/
 
+// DEMO #4A: Create JS object for page title in <head>
 
-const title = document.getElementById('title');
-const speaker = document.getElementById('speaker');
-const date = document.getElementById('date');
+// DEMO #6B: Create JS object for <select> element
 
-const speechBox = document.createElement('div');
-main.appendChild(speechBox);
-speechBox.id = 'speech-box'; // for CSS
+// DEMO #4B: Create JS objects for 5 elements in <main>
 
-// RENDER THE PAGE
-// TODO: Iterate over allData object to place <option> tags in <select>
+/** INITIAL RENDERING OF PAGE **/
 
+// DEMO #6C: Add options to select dynamically using data for all speeches
 
-// TODO: Refactor to use first speech in object of multiple speeches
+// DEMO #5B: Create variable to store first speech in imported data
 
-renderPage(mlkData);
+// DEMO #5D: Call render function and pass in current speech
 
-// EVENT LISTENERS
+/** EVENT LISTENERS **/
 
-// TODO: Create event listener for user's changes to the select field
+// DEMO #6D: Put an event listener on the <select> that re-renders the page when user selects a different speech
 
+/** TASK FUNCTIONS **/
 
-// FUNCTIONS BELOW
-function renderPage(speechData) {
-	// Set the <title> in the <head>
-	pageTitle.innerText = `${speechData.title} | ${speechData.speaker}`;
-
-	// Set background image
-	document.body.style.background = `black url(${speechData.imagePath}) no-repeat top center fixed`;
-	document.body.style.backgroundSize = '120%';
-
-	// Set the content for all four elements in <main> using the imported data
-	title.innerText = speechData.title;
-	speaker.innerText = speechData.speaker;
-	date.innerText = speechData.date;
-	speechBox.innerHTML = `<span id="speech-span">${speechData.text}</span>`;
-
-	// Improve the readability of the text of the speech
-	const speechSpan = document.getElementById('speech-span');
-	speechSpan.style.backgroundColor = 'rgba(248, 248, 255, 0.8)';
-}
+// DEMO #5C: Define a function that accepts a speech object and takes care of the following:
+// Set the <title> in the <head>
+// Set background image of the <body>
+// Set the content for all four elements in <main> using the imported data
