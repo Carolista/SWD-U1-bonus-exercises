@@ -1,4 +1,4 @@
-/* CREATE OBJECTS REPRESENTING HTML ELEMENTS */
+/** CREATE OBJECTS REPRESENTING HTML ELEMENTS **/
 
 // It's generally a good idea to declare objects outside of listeners
 // so they are in scope for everything, but there are exceptions,
@@ -9,12 +9,12 @@ const numButton = document.getElementById('num-button');
 const numBox = document.getElementById('num-box');
 const numOutput = document.getElementById('num-output');
 
-/* CODE TO RUN IMMEDIATELY */
+/** CODE TO RUN IMMEDIATELY **/
 
 // Add date to existing text content
 dateOutput.textContent += ` ${new Date().toLocaleDateString()}`;
 
-/* EVENT LISTENERS */
+/** EVENT LISTENERS **/
 
 numButton.addEventListener('click', () => {
 	console.log('I clicked the button!'); // A good initial test
