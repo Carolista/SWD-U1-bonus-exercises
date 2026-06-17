@@ -1,28 +1,36 @@
 html,
 body {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 16px;
+	font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1rem);
 	font-weight: 400;
 	color: #333;
-	height: 100vh;
-	width: 100vw;
+	min-height: 100vh;
 	margin: 0;
-	overflow-x: hidden;
 	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
 }
 
 header {
 	display: flex;
 	background-color: #006686;
 	color: white;
-	margin: 0px;
-	padding-left: 30px;
+	margin: 0;
+	padding-left: clamp(1rem, 2vw, 1.875rem);
 }
 
 main {
 	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
 	align-items: center;
-	margin: 30px 20%;
+	margin: clamp(1rem, 3vw, 1.875rem) clamp(1rem, 12vw, 20%);
 }
 
 footer {
@@ -33,12 +41,8 @@ footer {
 	color: white;
 	font-size: 0.75rem;
 	text-transform: uppercase;
-	margin: 0px;
-	padding-left: 30px;
-}
-
-div {
-	display: flex;
+	margin: 0;
+	padding-left: clamp(1rem, 2vw, 1.875rem);
 }
 
 h2 {
@@ -51,7 +55,7 @@ label {
 	color: #aaa;
 	font-size: 0.75rem;
 	text-transform: uppercase;
-	margin-top: 2px;
+	margin: 0 0 2px;
 }
 
 input,
@@ -59,21 +63,27 @@ select {
 	font-family: 'Montserrat', sans-serif;
 	border: 1px solid #ccc;
 	border-radius: 2px;
-	outline: none;
+	padding: 0.35rem 0.45rem;
 }
 
 button {
 	color: white;
-	font-size: 0.75rem;
+	font-size: clamp(0.7rem, 0.62rem + 0.25vw, 0.8rem);
 	font-weight: 500;
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
-	padding: 4px;
+	padding: 0.35rem 0.5rem;
 	margin-bottom: 4px;
 	border: none;
 	border-radius: 2px;
-	outline: none;
 	cursor: pointer;
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+	outline: 2px solid #006686;
+	outline-offset: 2px;
 }
 
 .flex-col {
@@ -81,10 +91,35 @@ button {
 }
 
 .space-between {
+	display: flex;
 	justify-content: space-between;
+	gap: 0.75rem;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0.75rem;
+	border: 1px solid #d6d6d6;
+	border-radius: 4px;
+}
+
+legend {
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	padding: 0 0.25rem;
 }
 
 #card-bkg {
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	font-size: 12px;
 	font-weight: 200;
@@ -93,10 +128,90 @@ button {
 	padding: 20px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
 
 #card-text {
+	display: flex;
+	flex-direction: column;
 	align-items: center;
+}
+
+#card-bkg.theme-elegant {
+	background-image: url(images/elegant-bkg.png);
+	justify-content: center;
+}
+
+#card-bkg.theme-elegant #card-text {
+	align-items: center;
+	color: #1a4362;
+}
+
+#card-bkg.theme-elegant #name {
+	font-family: 'Cormorant SC', serif;
+	font-size: 20px;
+}
+
+#card-bkg.theme-floral {
+	background-image: url(images/floral-bkg.png);
+	justify-content: flex-end;
+}
+
+#card-bkg.theme-floral #card-text {
+	align-items: flex-end;
+	color: firebrick;
+}
+
+#card-bkg.theme-floral #name {
+	font-family: 'Lily Script One', cursive;
+	font-size: 20px;
+}
+
+#card-bkg.theme-geometric {
+	background-image: url(images/geometric-bkg.png);
+	justify-content: flex-end;
+}
+
+#card-bkg.theme-geometric #card-text {
+	align-items: flex-end;
+	color: #333;
+}
+
+#card-bkg.theme-geometric #name {
+	font-family: 'Michroma', sans-serif;
+	font-size: 14px;
+}
+
+#card-bkg.theme-luxe {
+	background-image: url(images/luxe-bkg.png);
+	justify-content: center;
+}
+
+#card-bkg.theme-luxe #card-text {
+	align-items: flex-start;
+	color: darkgoldenrod;
+}
+
+#card-bkg.theme-luxe #name {
+	font-family: 'Marcellus SC', serif;
+	font-size: 20px;
+}
+
+#card-bkg.theme-classic {
+	background-image: url(images/classic-bkg.png);
+	justify-content: center;
+}
+
+#card-bkg.theme-classic #card-text {
+	align-items: center;
+	color: #666;
+}
+
+#card-bkg.theme-classic #name {
+	font-family: 'Cormorant SC', serif;
+	font-size: 20px;
 }
 
 #name {
@@ -112,8 +227,9 @@ button {
 }
 
 .field-with-label {
+	display: flex;
 	flex-direction: column;
-	width: 260px;
+	width: min(100%, 260px);
 	margin-bottom: 8px;
 }
 
@@ -122,31 +238,72 @@ button {
 }
 
 .form-group {
+	display: flex;
 	margin-top: 20px;
 }
 
-.checkbox-label,
-#omit-address2 {
-	vertical-align: middle;
+.checkbox-row {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin-top: 0.25rem;
+}
+
+.checkbox-label {
+	color: #333;
 	font-size: 0.6rem;
+	margin: 0;
 }
 
 #omit-address2 {
-	margin-left: 12px;
+	margin: 0;
 }
 
 #quantity-input {
+	width: 100%;
+}
+
+.short-field {
 	width: 80px;
 }
 
-.radio-group > label {
+.radio-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	min-width: 140px;
+	padding: 0.5rem;
+	border: 1px solid #d6d6d6;
+	border-radius: 4px;
+}
+
+.radio-group-label {
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 0 0 0.25rem;
+}
+
+.radio-row {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem;
+}
+
+.radio-row > label {
 	color: #333;
+	font-size: 0.75rem;
 	text-transform: none;
+	margin: 0;
+}
+
+.order-controls {
+	align-items: flex-start;
 }
 
 #save-button {
 	background-color: #006686;
-	width: 80%;
+	width: 100%;
 	margin-left: 10px;
 }
 #save-button:hover {
@@ -166,4 +323,29 @@ button {
 	text-align: center;
 	max-width: 1000px;
 	margin: 30px auto 60px;
+}
+
+@media screen and (max-width: 700px) {
+	main {
+		margin-inline: 1rem;
+	}
+
+	#card-bkg {
+		width: min(100%, 310px);
+	}
+
+	.order-controls,
+	.form-group {
+		flex-direction: column;
+	}
+
+	.short-field,
+	.radio-group,
+	.field-with-label {
+		width: 100%;
+	}
+
+	#save-button {
+		margin-left: 0;
+	}
 }
