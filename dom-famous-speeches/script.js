@@ -35,7 +35,7 @@ renderPage(currentSpeechData);
 // Re-render page when user selects a different speech
 speechSelect.addEventListener('change', () => {
 	console.log('Selected speech id:', speechSelect.value); // Initial test
-	currentSpeechData = allData.find(speech => speech.id === speechSelect.value);
+	currentSpeechData = allData.find(speech => speech.id == speechSelect.value);
 	renderPage(currentSpeechData); // Re-render page with updated speech data
 });
 
@@ -43,15 +43,15 @@ speechSelect.addEventListener('change', () => {
 
 function renderPage(speechData) {
 	// Set the <title> in the <head>
-	pageTitle.innerText = `${speechData.title} | ${speechData.speaker}`;
+	pageTitle.textContent = `${speechData.title} | ${speechData.speaker}`;
 
 	// Set background image of the <body>
 	document.body.style.background = `black url(${speechData.imagePath}) no-repeat center top fixed`;
 	document.body.style.backgroundSize = '120%';
 
 	// Set the content for all four elements in <main> using the imported data
-	title.innerText = speechData.title;
-	speaker.innerText = speechData.speaker;
-	date.innerText = speechData.date;
+	title.textContent = speechData.title;
+	speaker.textContent = speechData.speaker;
+	date.textContent = speechData.date;
 	speechText.textContent = speechData.text;
 }
