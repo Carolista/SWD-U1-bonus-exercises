@@ -40,7 +40,8 @@ const styleClassMap = {
 
 /** EVENT LISTENERS **/
 
-// DEMO: Update theme & content of card preview with user input
+// DEMO: Add event listeners to input elements to update both text content
+// and theme of card preview
 
 // DEMO: Add event listener to form for resetting form & card preview
 // using handler defined below
@@ -50,7 +51,9 @@ const styleClassMap = {
 
 /** TASK FUNCTIONS & EVENT HANDLERS **/
 
-// DEMO: Define a function to apply a theme to the card preview
+// DEMO: Define a function to update the phone and email on the same line
+
+// DEMO: Define a function to apply a theme to the card preview using classes
 
 // DEMO: Define a reset handler that confirms reset before
 // resetting the form or resetting the preview content and theme
