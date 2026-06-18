@@ -35,21 +35,6 @@
 			<!-- Form -->
 			<form action="./submitted.html">
 				<fieldset>
-					<legend>Select Style</legend>
-					<div class="field-with-label">
-						<label for="style-input">Background Style</label>
-						<select id="style-input" name="style-input">
-							<option value="none">No Background</option>
-							<option value="elegant">Elegant</option>
-							<option value="floral">Floral</option>
-							<option value="geometric">Geometric</option>
-							<option value="luxe">Luxe</option>
-							<option value="classic">Classic</option>
-						</select>
-					</div>
-				</fieldset>
-
-				<fieldset>
 					<legend>Enter Details</legend>
 
 					<div class="field-with-label">
@@ -109,9 +94,24 @@
 				</fieldset>
 
 				<fieldset>
-					<legend>Order Options</legend>
+					<legend>Select Style</legend>
+					<div class="field-with-label">
+						<label for="style-input">Background Style</label>
+						<select id="style-input" name="style-input">
+							<option value="none">No Background</option>
+							<option value="elegant">Elegant</option>
+							<option value="floral">Floral</option>
+							<option value="geometric">Geometric</option>
+							<option value="luxe">Luxe</option>
+							<option value="classic">Classic</option>
+						</select>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>Options</legend>
 					<div class="space-between order-controls">
-						<div class="field-with-label short-field">
+						<div id="quantity-group" class="field-with-label">
 							<label for="quantity-input">Quantity</label>
 							<select id="quantity-input" name="quantity-input" required>
 								<option value="250">250</option>
@@ -144,7 +144,7 @@
 				</fieldset>
 
 				<!-- Reset & Submit Buttons -->
-				<div class="form-group">
+				<div class="button-group">
 					<button id="reset-button" type="reset">Reset</button>
 					<button id="save-button" type="submit">Save This Design</button>
 				</div>
