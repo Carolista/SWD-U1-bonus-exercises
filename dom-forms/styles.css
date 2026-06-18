@@ -19,7 +19,7 @@ body {
 
 header {
 	display: flex;
-    justify-content: center;
+	justify-content: center;
 	background-color: #006686;
 	color: white;
 	margin: 0;
@@ -50,11 +50,14 @@ footer {
 
 h1 {
 	font-family: 'Zen Tokyo Zoo', sans-serif;
+	font-size: clamp(1.5rem, 0.9rem + 3.2vw, 3.2rem);
 	font-weight: normal;
 	text-transform: uppercase;
 }
 
 main > h2 {
+	font-size: clamp(1.15rem, 0.85rem + 1.8vw, 2.1rem);
+	line-height: 1.2;
 	margin: 0;
 }
 
