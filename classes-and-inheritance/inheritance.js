@@ -212,6 +212,19 @@ console.log(cokeZero instanceof Beverage);
 console.log(cokeZero instanceof Juice);
 
 
+/* Polymorphism */
+
+// Different classes, same behavior
+
+// Objects of different classes in same list
+const beverages = [water, v8, drPepper, dietPepsi];
+
+// Each objects carries out its describe method a little differently
+for (let beverage of beverages) {
+    beverage.describe();
+}
+
+
 /** YOUR TURN **/
 
 /*
