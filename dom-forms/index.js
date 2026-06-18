@@ -1,3 +1,5 @@
+
+
 // Elements in card preview to add/change content/styling
 const cardBkg = document.getElementById('card-bkg');
 const name = document.getElementById('name');

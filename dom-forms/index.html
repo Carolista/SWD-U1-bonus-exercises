@@ -10,31 +10,32 @@
 			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700&family=Cormorant+SC:wght@500&family=Marcellus+SC&family=Lily+Script+One&family=Michroma&family=Zen+Tokyo+Zoo&display=swap"
 			rel="stylesheet" />
 		<link href="styles.css" type="text/css" rel="stylesheet" />
-		<script src="script.js" defer></script>
+		<script src="global.js" defer></script>
+		<script src="index.js" defer></script>
 	</head>
 	<body>
 		<header>
-			<h2>&starf; River City Printing Company</h2>
+			<h1>&starf; River City Printing Company &starf;</h1>
 		</header>
 
 		<main class="flex-col">
-			<h3>Customize Your Business Card</h3>
-
-			<!-- Card Preview -->
-			<section id="preview">
-				<div id="card-bkg" class="flex-col">
-					<div id="card-text" class="flex-col">
-						<span id="name">Your Name</span>
-						<span id="address1">Your Address Line 1</span>
-						<span id="address2">Your Address Line 2</span>
-						<span id="phone-email">Your Phone | Your Email</span>
-					</div>
-				</div>
-			</section>
+			<h2>Customize Your Business Card</h2>
 
 			<!-- Form -->
-			<form action="./submitted.html">
-				<fieldset>
+			<form id="card-form" action="./submitted.html">
+				<!-- Card Preview -->
+				<section id="preview">
+					<div id="card-bkg" class="flex-col">
+						<div id="card-text" class="flex-col">
+							<span id="name">Your Name</span>
+							<span id="address1">Your Address Line 1</span>
+							<span id="address2">Your Address Line 2</span>
+							<span id="phone-email">Your Phone | Your Email</span>
+						</div>
+					</div>
+				</section>
+
+				<fieldset id="details-fieldset">
 					<legend>Enter Details</legend>
 
 					<div class="field-with-label">
@@ -93,7 +94,7 @@
 					</div>
 				</fieldset>
 
-				<fieldset>
+				<fieldset id="style-fieldset">
 					<legend>Select Style</legend>
 					<div class="field-with-label">
 						<label for="style-input">Background Style</label>
@@ -108,7 +109,7 @@
 					</div>
 				</fieldset>
 
-				<fieldset>
+				<fieldset id="options-fieldset">
 					<legend>Options</legend>
 					<div class="space-between order-controls">
 						<div id="quantity-group" class="field-with-label">
@@ -153,8 +154,8 @@
 
 		<footer>
 			<p>
-				&copy;2022 River City Printing Company, LLC &starf; 123 Main Street, St.
-				Louis, MO 63101<br />
+				&copy; <span id="year"></span> River City Printing Company, LLC<br />
+				123 Main Street &starf; St. Louis, MO 63101<br />
 				314-555-6789 &starf; info@rivercityprintingstl.com
 			</p>
 		</footer>
