@@ -1,29 +1,58 @@
-// OBJECTS REPRESENTING ELEMENTS ON PAGE
+/** OBJECTS REPRESENTING ELEMENTS ON PAGE **/
 
-// Elements in card preview to add/change content/styling
+// Card preview elements
 const cardBkg = document.getElementById('card-bkg');
-const cardText = document.getElementById('card-text');
 const name = document.getElementById('name');
 const address1 = document.getElementById('address1');
 const address2 = document.getElementById('address2');
 const phoneEmail = document.getElementById('phone-email');
 
-// TODO: Add object for form
+// Form element
+const form = document.querySelector('form');
 
-// TODO: Add objects for input elements
+// Input elements
+const styleInput = document.getElementById('style-input');
+const nameInput = document.getElementById('name-input');
+const address1Input = document.getElementById('address1-input');
+const address2Input = document.getElementById('address2-input');
+const omitAddress2 = document.getElementById('omit-address2');
+const phoneInput = document.getElementById('phone-input');
+const emailInput = document.getElementById('email-input');
 
-// TODO: Add object for reset button
+/** DATA FOR UPDATING THEMES **/
 
-// EVENT LISTENERS
+const themeClasses = [
+	'theme-elegant',
+	'theme-floral',
+	'theme-geometric',
+	'theme-luxe',
+	'theme-classic',
+];
 
-// TODO: Update styling of card preview based on input
-// Card background - background-image and justify-content
-// Card text - align-items and text color
-// Name text - font-family and font-size
+const styleClassMap = {
+	none: '',
+	elegant: 'theme-elegant',
+	floral: 'theme-floral',
+	geometric: 'theme-geometric',
+	luxe: 'theme-luxe',
+	classic: 'theme-classic',
+};
 
-// TODO: Update content of card preview with user input
+/** EVENT LISTENERS **/
 
-// TODO: Add logic for resetting form & card preview
+// DEMO: Update theme & content of card preview with user input
 
-// TODO: Give user an alert after a successful form submission
-// This will run only after it passes built-in validation
+// DEMO: Add event listener to form for resetting form & card preview
+// using handler defined below
+
+// DEMO: Add event listener to form for submitting form 
+// using handler defined below
+
+/** TASK FUNCTIONS & EVENT HANDLERS **/
+
+// DEMO: Define a function to apply a theme to the card preview
+
+// DEMO: Define a reset handler that confirms reset before
+// resetting the form or resetting the preview content and theme
+
+// DEMO: Define a submit handler for the sake of representation
