@@ -7,16 +7,16 @@ const pathNameArray = url.pathname.split('/');
 const fileName = pathNameArray[pathNameArray.length - 1];
 const pageName = fileName.slice(0, fileName.indexOf('.'));
 
-const titleText = pageName == 'index' ? 'Welcome' : getTitleCase(fileName);
-const navPath = pageName == 'index' ? '/pages' : '';
-const homePath = pageName == 'index' ? '' : '../index.html';
+const titleText = pageName === 'index' ? 'Welcome' : getTitleCase(fileName);
+const navPath = pageName === 'index' ? '/pages' : '';
+const homePath = pageName === 'index' ? '' : '../index.html';
+
+const thisYear = new Date().getFullYear();
 
 const head = document.querySelector('head');
 const title = document.querySelector('title');
-
 const header = document.querySelector('header');
 const footer = document.querySelector('footer');
-const thisYear = new Date().getFullYear();
 
 title.innerText = `Main Street Pet Rescue | ${titleText}`;
 head.innerHTML += `<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,38 +50,30 @@ getCatPics();
 
 // RANDOM CAT PICS courtesy of https://thecatapi.com/
 async function getCatPics() {
-
-    // Fetch 20 random photos using async/await syntax
+	// Fetch random photos using async/await syntax
 	let response = await fetch(
-		'https://api.thecatapi.com/v1/images/search?limit=20',
+		'https://api.thecatapi.com/v1/images/search?limit=5',
 		{
 			headers: {
 				'x-api-key':
 					'live_OGxGd4Qnu16oAEBlonS9roxlp8vKLHd0CNZ7KHIE67CqGGGBPJdg8FSbWEgMMoNA',
 			},
-		}
+		},
 	);
 	let data = await response.json();
 
-	console.log(data);
+	// console.log(data);
 
 	// Add all urls to photoUrls array (see logged data for structure)
 	for (let obj of data) {
 		photoUrls.push(obj.url);
 	}
 
-	// Put images on page
-	displayRandomPhotos();
+	// Put image on page
+	displayRandomPhoto();
 }
 
-function displayRandomPhotos(amount = 1) {
-	const randomUrls = [];
-	let randomUrl = getRandomElement(photoUrls);
-	while (randomUrls.length < amount && !randomUrls.includes(randomUrl)) {
-		randomUrls.push(randomUrl);
-		randomUrl = getRandomElement(photoUrls);
-	}
-	for (let url of randomUrls) {
-		photoSection.innerHTML += `<img src="${url}" maxwidth="400" />`;
-	}
+function displayRandomPhoto() {
+	randomUrl = getRandomElement(photoUrls);
+	photoSection.innerHTML += `<img src="${randomUrl}" maxwidth="400" />`;
 }
