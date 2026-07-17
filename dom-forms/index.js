@@ -41,15 +41,15 @@ const styleClassMap = {
 /** EVENT LISTENERS **/
 
 nameInput.addEventListener('input', () => {
-    name.textContent = nameInput.value || 'Your Name';
+    name.textContent = nameInput.value.trim() || 'Your Name';
 });
 
 address1Input.addEventListener('input', () => {
-    address1.textContent = address1Input.value || 'Your Address Line 1';
+    address1.textContent = address1Input.value.trim() || 'Your Address Line 1';
 });
 
 address2Input.addEventListener('input', () => {
-    address2.textContent = address2Input.value || 'Your Address Line 2';
+    address2.textContent = address2Input.value.trim() || 'Your Address Line 2';
 });
 
 omitAddress2.addEventListener('input', () => {
@@ -72,8 +72,8 @@ form.addEventListener('submit', handleFormSubmit);
 
 // Update phone and email on same line
 function handlePhoneAndEmailUpdate() {
-	phoneEmail.textContent = `${phoneInput.value || 'Your Phone'} | ${
-		emailInput.value || 'Your Email'
+	phoneEmail.textContent = `${phoneInput.value.trim() || 'Your Phone'} | ${
+		emailInput.value.trim() || 'Your Email'
 	}`;
 }
 
